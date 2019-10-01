@@ -23,4 +23,32 @@ fun main(args : Array<String>){
 
     iammutable = "reassigned"
     println(iammutable)
+
+    // $ - to refer a variable's value just like jquery.
+    val name = "Ubuntu kotlin"
+    println("Hello $name")
+    // Use {} braces when an operation is being performed on the variable
+    println("Hey ${name.toLowerCase()}")
+
+    val currentAge = 17
+
+    // expressions are concise
+    val canVote = if(currentAge>17) "yep you can" else "ooh no..! you can't"
+    println(canVote)
+
+    // enough crawling === lets jump to functions..
+    // lets call a function..!
+    println(determineVoteEligibility(currentAge))
+
+    println(returnVoteEligibility(currentAge))
+}
+
+// This method doesn't have {} rather uses = and asks kotlin
+// to do the type inference for us ( return String )
+fun determineVoteEligibility(age: Int) =
+    if(age>17) "yep you can" else "ooh no..! you can't"
+
+// This method uses {} and explicitly defines return type
+fun returnVoteEligibility(age: Int): String {
+    return if (age > 17) "yep you can" else "ooh no..! you can't"
 }
